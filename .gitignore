@@ -4,6 +4,8 @@ __pycache__/
 config.json
 progress.json
 failed.json
+benefits_progress.json
+benefits_failed.json
 golocal_all.csv
 golocal_physical.json
 golocal_skipped.csv

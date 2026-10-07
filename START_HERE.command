@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
 printf '\nGo Local on a Map: Asheville\n'
 printf '================================\n\n'
 echo "This will build a normal Google Maps Saved list from the current Go Local Asheville directory."
+echo "It will also add each published Go Local benefit as a note on that saved place."
 echo "It uses a separate Brave/Chrome profile and never asks for your Google password."
 printf '\n'
 
@@ -61,18 +62,20 @@ from golocal_common import load_config
 print(int(load_config().get('test_limit', 5)))
 PY
 )
-echo "Running a ${LIMIT}-place test..."
+echo "Running a ${LIMIT}-place test, including benefit notes..."
 python import_to_google_maps.py --limit "$LIMIT"
+python update_benefits.py --limit "$LIMIT"
 
 echo
 python status.py
 echo
-read -r -p "Check the Go Local Card list in Google Maps. Do the test places look correct? [y/N] " CONTINUE
+read -r -p "Check the Go Local Card list in Google Maps. Do the test places and benefit notes look correct? [y/N] " CONTINUE
 case "$CONTINUE" in
   y|Y|yes|YES)
     echo
     echo "Starting the full import. You can stop it and rerun later; progress is saved after every place."
     python import_to_google_maps.py
+    python update_benefits.py
     echo
     python status.py
     ;;

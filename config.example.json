@@ -6,5 +6,7 @@
   "browser_profile": "~/.golocal-maps-browser",
   "test_limit": 5,
   "delay_min_seconds": 2.0,
-  "delay_max_seconds": 5.0
+  "delay_max_seconds": 5.0,
+  "write_offer_notes": true,
+  "note_prefix": "❣️ Go Local: "
 }

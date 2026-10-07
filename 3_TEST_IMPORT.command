@@ -8,8 +8,10 @@ print(int(load_config().get('test_limit', 5)))
 PY
 )
 python import_to_google_maps.py --limit "$LIMIT"
+python update_benefits.py --limit "$LIMIT"
 
 echo
 echo "Test run finished. Check Google Maps: Saved/You > Go Local Card."
-echo "If the places look right, run 4_IMPORT_ALL.command."
+echo "Verify both the saved places and their Go Local benefit notes."
+echo "If they look right, run 4_IMPORT_ALL.command."
 read -r -p "Press Return to close..." _
