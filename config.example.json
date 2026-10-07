@@ -1,0 +1,10 @@
+{
+  "list_name": "Go Local Card",
+  "list_emoji": "❣️",
+  "maps_url": "https://www.google.com/maps",
+  "cdp_port": 9223,
+  "browser_profile": "~/.golocal-maps-browser",
+  "test_limit": 5,
+  "delay_min_seconds": 2.0,
+  "delay_max_seconds": 5.0
+}
