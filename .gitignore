@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+.DS_Store
+config.json
+progress.json
+failed.json
+golocal_all.csv
+golocal_physical.json
+golocal_skipped.csv
+failure-screenshots/
